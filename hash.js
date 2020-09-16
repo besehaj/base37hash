@@ -1,14 +1,14 @@
-function base37Decrypt(base37Number, increment) {
+function base37Decrypt(base37Number, decrement) {
 
         let positionArray = [], decryptedArray = [], 
         moduloRemainder = 0, hashKey = 'acdegilmnoprstuw';
 
-        while (increment > 0) {        
-                increment--;
+        while (decrement > 0) {        
+                decrement--;
                 moduloRemainder = ( base37Number % 37 );
-                positionArray[increment] = moduloRemainder;
+                positionArray[decrement] = moduloRemainder;
                 base37Number = (base37Number - moduloRemainder)/37;
-                decryptedArray[increment+1] = hashKey.charAt(positionArray[increment]);		
+                decryptedArray[decrement+1] = hashKey.charAt(positionArray[decrement]);		
             }
 
   return decryptedArray.join("");
