@@ -1,8 +1,7 @@
-
-function base37Decrypt(base37Number) {
+function base37Decrypt(base37Number, increment) {
 
         let positionArray = [], decryptedArray = [], 
-        moduloRemainder = 0, hashKey = 'acdegilmnoprstuw', increment = 11;
+        moduloRemainder = 0, hashKey = 'acdegilmnoprstuw';
 
         while (increment > 0) {        
                 increment--;
@@ -16,5 +15,5 @@ function base37Decrypt(base37Number) {
     
 }
 
-console.log(base37Decrypt(680131659347))
-console.log(base37Decrypt(1317985395604951854))
+console.log(base37Decrypt(680131659347, 7))
+console.log(base37Decrypt(1317985395604951854, 11))
